@@ -30,7 +30,7 @@ public class ParkingController extends BaseController{
 
     @PutMapping("/release-parking-space/{id}")
     public RequestDto releaseSpace(@PathVariable Long id) throws Exception {
-        parkingService.takeParkingSpace(id);
+        parkingService.releaseParkingSpace(id);
         RequestDto requestDto = new RequestDto();
         requestDto.setId(id);
         return requestDto;

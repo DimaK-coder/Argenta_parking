@@ -8,6 +8,6 @@ import java.util.List;
 public interface ParkingAssignmentStrategy {
     List<ParkingSpaceDto> findAllFree();
     void takeParkingSpace(Long parkingSpaceI);
-    void releaseParkingSpace(ParkingSpace parkingSpace);
+    void releaseParkingSpace(Long parkingSpaceI);
 
 }

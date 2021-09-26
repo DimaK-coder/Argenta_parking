@@ -37,7 +37,9 @@ public class ParkingAssignmentStrategyImpl implements ParkingAssignmentStrategy 
     }
 
     @Override
-    public void releaseParkingSpace(ParkingSpace parkingSpace) {
+    public void releaseParkingSpace(Long parkingSpaceId) {
+        validator.validate(parkingSpaceId);
+        ParkingSpace parkingSpace = repository.findById(parkingSpaceId).get();
         parkingSpace.setStatus(ParkingSpaceStatus.PENDING);
         repository.save(parkingSpace);
     }
